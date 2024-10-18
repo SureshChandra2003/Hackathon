@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intelligent Answer Evaluator</title>
+</head>
+<body>
+    <h1>Submit Your Answer</h1>
+    
+    <form action="/evaluate" method="post">
+        <label for="question_id">Select a Question:</label><br>
+        <select id="question_id" name="question_id" required>
+            {% for question in questions %}
+                <option value="{{ question['question_id'] }}">{{ question['question'] }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <textarea name="answer" rows="10" cols="30" placeholder="Type your answer here..."></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
